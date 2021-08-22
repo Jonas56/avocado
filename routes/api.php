@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/users/{user}', [UserController::class, 'show']);
+Route::apiResource('user', UserController::class);

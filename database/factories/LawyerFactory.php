@@ -22,7 +22,9 @@ class LawyerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'full_name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'password' => bcrypt($this->faker->password),
         ];
     }
 }

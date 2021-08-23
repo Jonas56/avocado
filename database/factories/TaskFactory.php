@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\LawyerCase;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,9 @@ class TaskFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'case_id' => LawyerCase::factory(),
+            'name' => $this->faker->sentence,
+            'description' => $this->faker->paragraph,
         ];
     }
 }

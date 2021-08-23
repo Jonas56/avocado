@@ -14,7 +14,7 @@ class CreateLawyerCasesTable extends Migration
     public function up()
     {
         Schema::create('lawyer_cases', function (Blueprint $table) {
-            $table->id('case_id');
+            $table->id();
             $table->foreignId('client_id');
             $table->foreignId('lawyer_id');
             $table->string('title');
@@ -25,6 +25,7 @@ class CreateLawyerCasesTable extends Migration
             $table->text('result')->nullable();
             $table->string('status')->default('open');
             $table->string('priority')->default('active');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -37,5 +38,6 @@ class CreateLawyerCasesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('lawyer_cases');
+        $table->dropSoftDeletes();
     }
 }

@@ -14,7 +14,7 @@ class CreateLawyersTable extends Migration
     public function up()
     {
         Schema::create('lawyers', function (Blueprint $table) {
-            $table->id('lawyer_id');
+            $table->id();
             $table->string('full_name');
             $table->string('email')->unique();
             $table->string('password');

@@ -24,7 +24,7 @@ class CreateLawyerCasesTable extends Migration
             $table->string('place');
             $table->text('result')->nullable();
             $table->string('status')->default('open');
-            $table->string('priority');
+            $table->string('priority')->default('active');
             $table->timestamps();
         });
     }

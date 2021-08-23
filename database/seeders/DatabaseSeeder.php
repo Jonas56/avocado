@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\InvoiceItem;
+use App\Models\LawyerCase;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
+        LawyerCase::truncate();
+        InvoiceItem::truncate();
+        Task::truncate();
+
+        // User::factory(10)->create();
+        LawyerCase::factory(10)->create();
+        InvoiceItem::factory(10)->create();
+        Task::factory(10)->create();
     }
 }

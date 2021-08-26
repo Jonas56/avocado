@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Client;
-use App\Models\Lawyer;
 use App\Models\LawyerCase;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LawyerCaseFactory extends Factory
@@ -25,7 +25,7 @@ class LawyerCaseFactory extends Factory
     {
         return [
             'client_id' => Client::factory(),
-            'lawyer_id' => Lawyer::factory(),
+            'user_id' => User::factory(),
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'judge_name' => $this->faker->name,

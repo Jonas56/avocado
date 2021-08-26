@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Client;
 use App\Models\Lawyer;
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,13 +15,13 @@ class LawyerCase extends Model
     use HasFactory, SoftDeletes;
 
     /**
-     * Get the lawyer that owns the LawyerCase
+     * Get the user that owns the LawyerCase
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function lawyer()
+    public function user()
     {
-        return $this->belongsTo(Lawyer::class);
+        return $this->belongsTo(User::class);
     }
 
     /**

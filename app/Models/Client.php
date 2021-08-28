@@ -15,7 +15,7 @@ class Client extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lawyercase()
+    public function lawyercases()
     {
         return $this->hasMany(LawyerCase::class);
     }

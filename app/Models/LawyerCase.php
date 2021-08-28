@@ -14,6 +14,8 @@ class LawyerCase extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $guarded = [];
+
     /**
      * Get the user that owns the LawyerCase
      *
@@ -39,7 +41,7 @@ class LawyerCase extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function task()
+    public function tasks()
     {
         return $this->hasMany(Task::class);
     }

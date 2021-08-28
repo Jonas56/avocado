@@ -16,7 +16,9 @@ class LawyerCaseController extends Controller
      */
     public function index()
     {
-        return new LawyerCaseResource(LawyerCase::all());
+        $cases = LawyerCase::where('user_id', auth()->user()->id)->latest()->with('client')->get();
+
+        return new LawyerCaseResource($cases);
     }
 
     /**
@@ -27,10 +29,14 @@ class LawyerCaseController extends Controller
      */
     public function store(Request $request)
     {
-        dd(Auth::user());
-        // $request->validate([
-        //     '',
-        // ]);
+        $attributes = $this->validateCase();
+
+        $attributes['user_id'] = auth()->user()->id;
+
+        $case = LawyerCase::create($attributes);
+
+        return response($case, 200);
+
     }
 
     /**
@@ -41,7 +47,8 @@ class LawyerCaseController extends Controller
      */
     public function show(LawyerCase $lawyerCase)
     {
-        return new LawyerCaseResource(LawyerCase::find($lawyerCase));
+        $case = LawyerCase::where('id', $lawyerCase->id)->with('client')->get();
+        return new LawyerCaseResource($case);
     }
 
     /**
@@ -53,7 +60,13 @@ class LawyerCaseController extends Controller
      */
     public function update(Request $request, LawyerCase $lawyerCase)
     {
-        //
+        $case = LawyerCase::find($lawyerCase)->first();
+
+        $attributes = $this->validateCase($lawyerCase);
+
+        $case->update($attributes);
+
+        return response()->json(['message' => "Case updated succesfully"], 200);
     }
 
     /**
@@ -64,6 +77,22 @@ class LawyerCaseController extends Controller
      */
     public function destroy(LawyerCase $lawyerCase)
     {
-        //
+        $case = LawyerCase::find($lawyerCase)->first();
+        $case->delete();
+        return response()->json(['message' => 'case deleted succesfully'], 200);
+    }
+
+    protected function validateCase(?LawyerCase $lawyerCase = null): array
+    {
+        $lawyerCase??=new LawyerCase();
+
+        return request()->validate([
+            'client_id' => 'required|exists:clients,id',
+            'title' => 'required',
+            'description' => 'required',
+            'judge_name' => 'required',
+            'enemy' => 'required',
+            'place' => 'required',
+        ]);
     }
 }

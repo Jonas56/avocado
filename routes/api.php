@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LawyerCaseController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,13 @@ use App\Http\Controllers\LawyerCaseController;
 |
  */
 
-Route::apiResource('/cases', LawyerCaseController::class)->parameters([
-    'cases' => 'lawyer_case',
-]);
+// Public Routes
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+
+// Protected Routes
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::apiResource('/cases', LawyerCaseController::class)->parameters([
+        'cases' => 'lawyer_case',
+    ]);
+});

@@ -94,13 +94,19 @@ npm run watch
 GET api/cases
 ```
 
-```
+`
+
 ## App Info
+
 ### Authors
+
 Jonas & GMarcov
 [MarcsoX](https://www.marcsox.com)
+
 ### Version
+
 1.0.0
+
 ### License
+
 None
-```

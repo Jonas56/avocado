@@ -23,7 +23,7 @@ class TaskFactory extends Factory
     public function definition()
     {
         return [
-            'case_id' => LawyerCase::factory(),
+            'lawyer_case_id' => LawyerCase::factory(),
             'name' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
         ];

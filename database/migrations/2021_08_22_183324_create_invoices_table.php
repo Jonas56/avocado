@@ -15,7 +15,7 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id');
+            $table->foreignId('client_id')->constrained()->cascadeOnDelete();
             $table->float('total');
             $table->text('description');
             $table->float('total_hours');

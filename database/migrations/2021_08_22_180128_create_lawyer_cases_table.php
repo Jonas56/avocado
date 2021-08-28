@@ -15,8 +15,8 @@ class CreateLawyerCasesTable extends Migration
     {
         Schema::create('lawyer_cases', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id');
-            $table->foreignId('user_id');
+            $table->foreignId('client_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->text('description');
             $table->string('judge_name');

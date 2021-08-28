@@ -15,7 +15,7 @@ class CreateInvoiceItemsTable extends Migration
     {
         Schema::create('invoice_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('invoice_id');
+            $table->foreignId('invoice_id')->constrained()->cascadeOnDelete();
             $table->dateTime('date');
             $table->string('subject');
             $table->float('amount');

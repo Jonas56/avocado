@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        LawyerCase::truncate();
-        InvoiceItem::truncate();
-        Task::truncate();
+        // Invoice::truncate();
+        // Client::truncate();
+        // Task::truncate();
 
         // User::factory(10)->create();
         LawyerCase::factory(10)->create();

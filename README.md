@@ -65,20 +65,21 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # Avocado Laravel/Vue App
 
-> Laravel 5.5 API that uses the API resources with a Vue.js frontend
+> Laravel 8.0 API that uses the API resources with a Vue.js frontend
 
 ## Quick Start
 
 ```bash
 # Install Dependencies
 composer install
+# copy .env file
+cp .env.example .env
 # Run Migrations
 php artisan migrate
-# Import Articles
+# Import fake data
 php artisan db:seed
-# Add virtual host if using Apache
-# If you get an error about an encryption key
-php artisan key:generate
+# Satrt server
+php artisan serve
 # Install JS Dependencies
 npm install
 # Watch Files

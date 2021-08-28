@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -61,4 +61,71 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+
+# Larticles Laravel/Vue App
+
+> Laravel 5.5 API that uses the API resources with a Vue.js frontend
+
+## Quick Start
+
+```bash
+# Install Dependencies
+composer install
+# Run Migrations
+php artisan migrate
+# Import Articles
+php artisan db:seed
+# Add virtual host if using Apache
+# If you get an error about an encryption key
+php artisan key:generate
+# Install JS Dependencies
+npm install
+# Watch Files
+npm run watch
+```
+
+## Endpoints
+
+### List all articles with links and meta
+
+```bash
+GET api/articles
+```
+
+### Get single article
+
+```bash
+GET api/article/{id}
+```
+
+### Delete article
+
+```bash
+DELETE api/article/{id}
+```
+
+### Add article
+
+```bash
+POST api/article
+title/body
+```
+
+### Update article
+
+```bash
+PUT api/article
+article_id/title/body
+```
+
+```
+## App Info
+### Author
+Brad Traversy
+[Traversy Media](http://www.traversymedia.com)
+### Version
+1.0.0
+### License
+This project is licensed under the MIT License
+```

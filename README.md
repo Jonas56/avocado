@@ -63,7 +63,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
 
-# Larticles Laravel/Vue App
+# Avocado Laravel/Vue App
 
 > Laravel 5.5 API that uses the API resources with a Vue.js frontend
 
@@ -87,45 +87,19 @@ npm run watch
 
 ## Endpoints
 
-### List all articles with links and meta
+### List all cases with links and meta
 
 ```bash
-GET api/articles
-```
-
-### Get single article
-
-```bash
-GET api/article/{id}
-```
-
-### Delete article
-
-```bash
-DELETE api/article/{id}
-```
-
-### Add article
-
-```bash
-POST api/article
-title/body
-```
-
-### Update article
-
-```bash
-PUT api/article
-article_id/title/body
+GET api/cases
 ```
 
 ```
 ## App Info
-### Author
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+### Authors
+Jonas & GMarcov
+[MarcsoX](https://www.marcsox.com)
 ### Version
 1.0.0
 ### License
-This project is licensed under the MIT License
+None
 ```

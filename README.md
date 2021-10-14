@@ -93,8 +93,6 @@ npm run watch
 ```bash
 GET api/cases
 ```
-
-
 ## App Info
 
 ### Authors

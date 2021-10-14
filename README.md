@@ -94,7 +94,6 @@ npm run watch
 GET api/cases
 ```
 
-`
 
 ## App Info
 
